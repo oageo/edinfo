@@ -9,6 +9,9 @@
             <NuxtLink class="navbar-item" to="/">
                 トップページ
             </NuxtLink>
+            <NuxtLink class="navbar-item" to="/area">
+                対応自治体一覧
+            </NuxtLink>
         </span>
         <span class="navbar-end">
             <span class="buttons">

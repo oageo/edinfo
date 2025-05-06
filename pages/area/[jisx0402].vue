@@ -22,6 +22,7 @@
       <p>指定された地方公共団体コードの消防本部等に、emergency-dispatchが対応していないか、誤った値が入力された可能性があります。</p>
       <p>指定された地方公共団体コード（<span class="has-text-weight-bold">{{ route.params.jisx0402 }}</span>）が存在するかどうかと共にお確かめください。</p>
     </div>
+    <CommonFooter />
   </div>
 </template>
 

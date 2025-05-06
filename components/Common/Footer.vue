@@ -2,6 +2,7 @@
     <footer class="footer">
         <div class="columns">
             <NuxtLink class="column has-text-centered" to="/">トップページ</NuxtLink>
+            <NuxtLink class="column has-text-centered" to="/area">自治体ごとページの一覧</NuxtLink>
             <a class="column has-text-centered" href="https://github.com/oageo/emergency-dispatch">データの出典</a>
             <a class="column has-text-centered" href="https://github.com/oageo/edinfo">ソースコード</a>
         </div>
