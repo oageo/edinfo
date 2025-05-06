@@ -5,3 +5,10 @@
         <CommonFooter />
     </div>
 </template>
+
+<script setup>
+useSeoMeta({
+  title: 'トップページ',
+  twitterCard: 'summary'
+})
+</script>

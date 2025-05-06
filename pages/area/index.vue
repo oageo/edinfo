@@ -39,4 +39,10 @@ onMounted(async () => {
     console.error('list.jsonの取得に失敗しました:', error);
   }
 });
+
+useSeoMeta({
+  title: '対応している市区町村等の一覧',
+  twitterCard: 'summary'
+})
+
 </script>
