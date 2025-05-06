@@ -1,0 +1,24 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.17.2",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.1"
+  },
+  "packageManager": "pnpm@8.7.5+sha1.735d4d0e6fc66c4d2d64b269b08e5995b19230ca",
+  "devDependencies": {
+    "bulma": "^1.0.4",
+    "nuxt-purgecss": "^2.0.0",
+    "sass": "^1.87.0",
+    "sass-loader": "^16.0.5"
+  }
+}
