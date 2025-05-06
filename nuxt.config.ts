@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'ja'
       },
-      title: 'edinfo',
+      titleTemplate: '%s - edinfo',
       meta: [
         { name: 'description', content: '緊急車両の出動情報をWebサイトの形で掲載する' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

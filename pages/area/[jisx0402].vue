@@ -33,7 +33,7 @@
       <p>現在、消防出動情報はありません。</p>
       <hr>
     </div>
-    <div v-if="source.length" class="container m-2">
+    <div v-if="source.length" class="container m-2 is-justify-content-center">
       <div v-for="(src, index) in source" :key="index">
         <p>消防本部等: {{ src.name }}</p>
         <p>ソース: <a :href="src.url" rel="noopener">{{ src.url }}</a></p>
@@ -78,5 +78,10 @@ onMounted(async () => {
     console.error(error);
   }
 });
+
+useSeoMeta({
+  title: jisx0402 + 'の消防出動情報',
+  twitterCard: 'summary'
+})
 </script>
 
