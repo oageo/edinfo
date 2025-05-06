@@ -1,7 +1,7 @@
 <template>
     <div>
         <TopHeader />
-        <TopAbout />
+        <TopAbout class="p-2" />
         <CommonFooter />
     </div>
 </template>

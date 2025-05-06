@@ -23,7 +23,7 @@ export default defineEventHandler(async () => {
     cachedData = response;
     cacheTimestamp = now;
 
-    console.log('list.json: 新しいデータを取得し、キャッシュを更新しました', cachedData);
+    console.log('list.json: 新しいデータを取得し、キャッシュを更新しました');
     return cachedData;
   } catch (error) {
     console.error('list.jsonの取得に問題があります:', error);
