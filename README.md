@@ -2,6 +2,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/oageo/edinfo)
 ![GitHub License](https://img.shields.io/github/license/oageo/edinfo)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/oageo/edinfo)
+
 緊急車両の出動情報をWebサイトの形で掲載する
 
 ## データソース

@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   css: [
     "bulma"
   ],
+  "modules": [
+    'nuxt-purgecss',
+  ],
   runtimeConfig: {
     EDBOT_BASE_URL: 'https://edbot.osumiakari.jp', // emergency-dispatchが設置されているアドレスを指定する
     public: {
