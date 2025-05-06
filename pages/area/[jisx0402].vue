@@ -11,19 +11,17 @@
     </div>
     <div v-if="disasters.length">
       <div class="container p-2">
-        <div class="columns is-multiline">
-          <div v-for="(disaster, index) in disasters" :key="index" class="disaster">
-            <div class="column is-3">
-              <div class="card">
-                <div class="card-header">
-                  <h2 class="card-header-title">
-                    {{ disaster.type }}
-                  </h2>
-                </div>
-                <div class="card-content">
-                  <p>住所: {{ disaster.address }}</p>
-                  <p>時刻: {{ disaster.time }}</p>
-                </div>
+        <div v-for="(disaster, index) in disasters" :key="index" class="disaster columns is-multiline">
+          <div class="column is-3">
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-header-title">
+                  {{ disaster.type }}
+                </h2>
+              </div>
+              <div class="card-content">
+                <p>住所: {{ disaster.address }}</p>
+                <p>時刻: {{ disaster.time }}</p>
               </div>
             </div>
           </div>
