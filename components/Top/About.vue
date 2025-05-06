@@ -32,7 +32,10 @@
                 掲載するべき事象を見かけたのに掲載されていない
             </h2>
             <p>
-                初めにemergency-dispatchが対応しているかどうかを、<a href="https://github.com/oageo/emergency-dispatch/blob/develop/README.md#%E5%AF%BE%E5%BF%9C%E5%B8%82%E5%8C%BA%E7%94%BA%E6%9D%91">emergency-dispatchのREADME</a>において確認してください。対応市区町村内にいらっしゃり、掲載するべき事象を見かけた際はまず119番通報などを行うなどし、消防本部等が事象を認知できるようにしてください。またemergency-dispatchは常に最新情報を得るのではなく、その実行時における最新情報を取得するようになっています。そのためしばらく待ってから更新してください。
+                初めにemergency-dispatchが対応しているかどうかを、<a href="https://github.com/oageo/emergency-dispatch/blob/develop/README.md#%E5%AF%BE%E5%BF%9C%E5%B8%82%E5%8C%BA%E7%94%BA%E6%9D%91">emergency-dispatchのREADME</a>において確認してください。対応市区町村内にいらっしゃり、掲載するべき事象を見かけた際は<span class="has-text-weight-bold">まず119番通報</span>などを行うなどし、消防本部等が事象を認知できるようにしてください。
+            </p>
+            <p>
+                またemergency-dispatchは常に最新情報を得るのではなく、その実行時における最新情報を取得するようになっています。そのためしばらく待ってから更新してください。この他、本サイトにおいてはemergency-dispatchに過剰な負担をかけないよう、数分間のキャッシュ機構を備えております。このため、反映により時間がかかる場合があります。
             </p>
             <p>
                 他にも消防本部等の判断によって情報が公開されない場合や、emergency-dispatchの不備によって取得が上手くいかない場合があります。いずれにしろ、大半の消防本部等において出動情報の更新は最重要な業務ではない（当該市区町村における住民の生命と財産を守ることが基本的に最重要である）ため、情報が遅れたり欠損する場合がままありますため、このような非公式な情報に頼るのではなく、ある程度は自らで確認されることをおすすめします。
