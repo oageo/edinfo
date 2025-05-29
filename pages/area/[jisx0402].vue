@@ -11,8 +11,8 @@
     </div>
     <div v-if="disasters.length">
       <div class="container p-2">
-        <div v-for="(disaster, index) in disasters" :key="index" class="disaster columns is-multiline">
-          <div class="column is-3">
+        <div class="columns is-multiline">
+          <article v-for="(disaster, index) in disasters" :key="index" class="disaster column is-3">
             <div class="card">
               <div class="card-header">
                 <h2 class="card-header-title">
@@ -24,13 +24,15 @@
                 <p>時刻: {{ disaster.time }}</p>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
       <hr>
     </div>
     <div v-else-if="source.length">
-      <p>現在、消防出動情報はありません。</p>
+      <div class="container p-2">
+        <p>現在、消防出動情報はありません。</p>
+      </div>
       <hr>
     </div>
     <div v-if="source.length" class="container m-2 is-justify-content-center">
@@ -58,7 +60,7 @@ const jisx0402 = route.params.jisx0402;
 
 onMounted(async () => {
   if (!jisx0402) {
-    console.error('jisx0402 is undefined');
+    console.error('「jisx0402」が定義されていません');
     return;
   }
 
@@ -66,7 +68,7 @@ onMounted(async () => {
     // サーバーサイドのAPIを経由してデータを取得
     const response = await fetch(`/api/${jisx0402}`);
     if (!response.ok) {
-      throw new Error(`Failed to fetch data for jisx0402: ${jisx0402}`);
+      throw new Error(`「jisx0402」をキーとしてデータをフェッチすることに失敗しました: ${jisx0402}`);
     }
 
     const data = await response.json();
@@ -81,6 +83,7 @@ onMounted(async () => {
 
 useSeoMeta({
   title: jisx0402 + 'の消防出動情報',
+  description: jisx0402 + '（地方公共団体コード: ' + jisx0402 + '）の消防出動の一覧です。詳細については直接各消防本部等のWebサイトをご覧ください。',
   twitterCard: 'summary'
 })
 </script>
