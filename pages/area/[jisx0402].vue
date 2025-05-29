@@ -11,8 +11,8 @@
     </div>
     <div v-if="disasters.length">
       <div class="container p-2">
-        <div v-for="(disaster, index) in disasters" :key="index" class="disaster columns is-multiline">
-          <div class="column is-3">
+        <div class="columns is-multiline">
+          <article v-for="(disaster, index) in disasters" :key="index" class="disaster column is-3">
             <div class="card">
               <div class="card-header">
                 <h2 class="card-header-title">
@@ -24,13 +24,15 @@
                 <p>時刻: {{ disaster.time }}</p>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
       <hr>
     </div>
     <div v-else-if="source.length">
-      <p>現在、消防出動情報はありません。</p>
+      <div class="container p-2">
+        <p>現在、消防出動情報はありません。</p>
+      </div>
       <hr>
     </div>
     <div v-if="source.length" class="container m-2 is-justify-content-center">
