@@ -60,7 +60,7 @@ const jisx0402 = route.params.jisx0402;
 
 onMounted(async () => {
   if (!jisx0402) {
-    console.error('jisx0402 is undefined');
+    console.error('「jisx0402」が定義されていません');
     return;
   }
 
@@ -68,7 +68,7 @@ onMounted(async () => {
     // サーバーサイドのAPIを経由してデータを取得
     const response = await fetch(`/api/${jisx0402}`);
     if (!response.ok) {
-      throw new Error(`Failed to fetch data for jisx0402: ${jisx0402}`);
+      throw new Error(`「jisx0402」をキーとしてデータをフェッチすることに失敗しました: ${jisx0402}`);
     }
 
     const data = await response.json();
@@ -83,6 +83,7 @@ onMounted(async () => {
 
 useSeoMeta({
   title: jisx0402 + 'の消防出動情報',
+  description: jisx0402 + '（地方公共団体コード: ' + jisx0402 + '）の消防出動の一覧です。詳細については直接各消防本部等のWebサイトをご覧ください。',
   twitterCard: 'summary'
 })
 </script>
