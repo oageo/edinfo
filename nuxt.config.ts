@@ -26,8 +26,10 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     EDBOT_BASE_URL: 'https://edbot.osumiakari.jp', // emergency-dispatchが設置されているアドレスを指定する
+    JMCJSON_BASE_URL: 'https://jmc.osumiakari.jp', // JMCJSONが設置されているアドレスを指定する
     public: {
-      EDBOT_BASE_URL: 'https://edbot.osumiakari.jp' // emergency-dispatchが設置されているアドレスを指定する
+      EDBOT_BASE_URL: 'https://edbot.osumiakari.jp', // emergency-dispatchが設置されているアドレスを指定する
+      JMCJSON_BASE_URL: 'https://jmc.osumiakari.jp', // JMCJSONが設置されているアドレスを指定する
     }
   }
 })

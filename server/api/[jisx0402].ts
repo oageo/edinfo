@@ -34,7 +34,7 @@ export default defineEventHandler(async (event) => {
       timestamp: now,
     };
 
-    console.log(`jisx0402: 新しいデータを取得し、キャッシュを更新しました'`);
+    console.log(`jisx0402: 新しいデータを取得し、キャッシュを更新しました`);
     return data;
   } catch (error) {
     console.error(`jisx0402: 取得に問題があります`, error);
