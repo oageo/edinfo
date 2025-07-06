@@ -4,7 +4,7 @@
       <TopNav />
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">{{ jisx0402 }}の消防出動情報</h1>
+          <h1 class="title">{{ name.name }}の消防出動情報</h1>
           <p class="subtitle">地方公共団体コード: {{ jisx0402 }}</p>
         </div>
       </div>
@@ -55,8 +55,10 @@ import { useRoute } from 'vue-router';
 
 const disasters = ref([]);
 const source = ref([]);
+const name = ref({}); 
 const route = useRoute();
 const jisx0402 = route.params.jisx0402;
+const nameString = ref(jisx0402);
 
 onMounted(async () => {
   if (!jisx0402) {
@@ -65,26 +67,34 @@ onMounted(async () => {
   }
 
   try {
-    // サーバーサイドのAPIを経由してデータを取得
-    const response = await fetch(`/api/${jisx0402}`);
-    if (!response.ok) {
-      throw new Error(`「jisx0402」をキーとしてデータをフェッチすることに失敗しました: ${jisx0402}`);
+    // 災害情報と地方公共団体名を並列で取得します
+    const [disasterResponse, nameResponse] = await Promise.all([
+      fetch(`/api/${jisx0402}`),
+      fetch(`/api/name/${jisx0402}`)
+    ]);
+
+    if (!disasterResponse.ok) {
+      throw new Error(`「jisx0402」をキーとして災害情報をフェッチすることに失敗しました: ${jisx0402}`);
     }
+    if (!nameResponse.ok) {
+      console.error(`「jisx0402」をキーとして地方公共団体の名称をJMCJSONからフェッチすることに失敗しました: ${jisx0402}`);
+      name.value = { name: jisx0402 }; // フォールバックとしてコードを団体名に設定します
+    } else {
+      name.value = await nameResponse.json();
+    }
+    nameString.value = name.value.name;
 
-    const data = await response.json();
-    console.log('data:', data);
-
-    disasters.value = data.disasters || [];
-    source.value = data.source || [];
+    const disasterData = await disasterResponse.json();
+    disasters.value = disasterData.disasters || [];
+    source.value = disasterData.source || [];
   } catch (error) {
     console.error(error);
   }
 });
 
 useSeoMeta({
-  title: jisx0402 + 'の消防出動情報',
-  description: jisx0402 + '（地方公共団体コード: ' + jisx0402 + '）の消防出動の一覧です。詳細については直接各消防本部等のWebサイトをご覧ください。',
+  title: () => `${nameString.value}（${jisx0402}）の消防出動情報`,
+  description: () => `${nameString.value}（地方公共団体コード: ${jisx0402}）の消防出動の一覧です。詳細については直接各消防本部等のWebサイトをご覧ください。`,
   twitterCard: 'summary'
 })
 </script>
-
