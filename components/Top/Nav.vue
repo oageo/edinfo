@@ -12,6 +12,9 @@
             <NuxtLink class="navbar-item" to="/area">
                 対応自治体一覧
             </NuxtLink>
+            <NuxtLink class="navbar-item" to="/area/all">
+                全量表示
+            </NuxtLink>
         </span>
         <span class="navbar-end">
             <span class="buttons">
